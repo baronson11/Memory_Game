@@ -20,8 +20,6 @@ class App extends Component {
               key={char.id}
               name={char.name}
               image={char.image}
-              occupation={char.occupation}
-              location={char.location}
             />
           ))}
       </div>
