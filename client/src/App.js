@@ -6,20 +6,26 @@ import characters from "./data/characters.json";
 
 class App extends Component {
   state = {
-    characters
+    characters,
+    score: 0
+  };
+
+  handleScore = () => {
+    this.setState({ score: this.state.score + 1 });
   };
 
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar score={this.state.score} />
         <Jumbotron />
           {this.state.characters.map(char => (
             <Card
+              handleScore={this.handleScore}
               id={char.id}
-              key={char.id}
               name={char.name}
               image={char.image}
+              clicked={false}
             />
           ))}
       </div>
