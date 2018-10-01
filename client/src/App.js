@@ -14,6 +14,10 @@ class App extends Component {
     this.setState({ score: this.state.score + 1 });
   };
 
+  // handleClick = (props) => {
+  //   props.clicked = true;
+  // };
+
   render() {
     return (
       <div>
@@ -22,7 +26,9 @@ class App extends Component {
           {this.state.characters.map(char => (
             <Card
               handleScore={this.handleScore}
+              handleClick={this.handleClick}
               id={char.id}
+              key={char.id}
               name={char.name}
               image={char.image}
               clicked={false}
